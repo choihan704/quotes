@@ -145,9 +145,9 @@ def split_quiz(line):
 
     result = Cashwalk.query.filter_by(question = question).all()
     if len(result) == 0 :
-        print("Add DB")
-        print("Q:", question)
-        print("A:", strip_answer)
+        #print("Add DB")
+        #print("Q:", question)
+        #print("A:", strip_answer)
 
         quiz = Cashwalk(question=question, answer=strip_answer)
         db.session.add(quiz)
