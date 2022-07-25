@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:password@localhost/quotes'
-
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:password@localhost/quotes'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://bgxfydqzvnvhee:737860bce056fade50d32ecf235f955ebe36537fae785ab87c5b11b9d82d5f53@ec2-54-152-28-9.compute-1.amazonaws.com:5432/dc61fetp95p5mc'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -36,3 +36,4 @@ def process():
     db.session.commit()
 
     return redirect(url_for('index'))
+

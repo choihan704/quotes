@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Cashwalk Quiz</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" >
+
+  </head>
+
+  <body>
+    <nav style="margin-top:25px;margin-left:45px">
+      <a class="btn btn-primary" href="{{ url_for('quiz') }}">Add a quiz</a>
+    </nav>
+    <br>
+
+    <div class="container theme-showcase" role="main">
+
+      <div style="color:#fff; background-color:orange", class="jumbotron">
+        <h3>Cashwalk Quiz</h3>
+      </div>
+
+      <!--for loop starts-->
+      {% for r in result %}
+      <div style ="color:#fff;background-color:blue">
+        <h5> {{ r.question }} </h5>
+      </div>
+       <div style ="color:black;font-size:16px;background-color:yellow">
+        <p> {{ r.answer }} </p>
+      </div>
+      {% endfor %}
+
+      <!-- for loop ends here..-->
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
